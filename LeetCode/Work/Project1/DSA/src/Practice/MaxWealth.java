@@ -20,18 +20,33 @@ public class MaxWealth {
         System.out.println(maximumWealth(arr));
     }
 
-    static int maximumWealth(int[][] Wealth) {
-        int ans = 0;
-
-        for (int row = 0; row < Wealth.length; row++) {
+    static int maximumWealth(int[][] arr) {
+        int maxwealth = 0;
+        for (int row = 0; row < arr.length; row++) {
             int sum = 0;
-            for (int col = 0; col < Wealth[row].length; col++) {
-                sum += Wealth[row][col];
+            for (int col = 0; col < arr[row].length; col++) {
+                sum += arr[row][col];
             }
-            if (sum > ans) {
-                ans = sum;
+           
+            if (sum > maxwealth) {
+                maxwealth = sum;
             }
         }
-        return ans;
+        return maxwealth;
     }
+
+//    static int maximumWealth(int[][] Wealth) {
+//        int ans = 0;
+//
+//        for (int row = 0; row < Wealth.length; row++) {
+//            int sum = 0;
+//            for (int col = 0; col < Wealth[row].length; col++) {
+//                sum += Wealth[row][col];
+//            }
+//            if (sum > ans) {
+//                ans = sum;
+//            }
+//        }
+//        return ans;
+//    }
 }

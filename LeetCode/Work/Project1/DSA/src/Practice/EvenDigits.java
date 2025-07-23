@@ -18,6 +18,34 @@ public class EvenDigits {
         System.out.println(FindNumber(nums));
     }
 
+//    static int FindNumber(int[] num) {
+//        int count = 0;
+//        for (int i = 0; i < num.length; i++) {
+//            if (CheckEven(num[i])) {
+//                count++;
+//            }
+//        }
+//        return count;
+//    }
+//
+//    static boolean CheckEven(int num) {
+//        int NoOfDigits = digits(num);
+//        if (NoOfDigits % 2 == 0) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
+//
+//    static int digits(int num) {
+//        int count = 0;
+//        while (num > 0) {
+//            num = num / 10;
+//            count++;
+//        }
+//        return count;
+//    }
+
     static int FindNumber(int[] nums) {
         int count = 0;
         for (int i = 0; i < nums.length; i++) {

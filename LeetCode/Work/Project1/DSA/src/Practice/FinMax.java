@@ -9,30 +9,30 @@ package Practice;
  *
  * @author SOFTWARE
  */
-public class FindMin {
+public class FinMax {
 
     public static void main(String[] args) {
         int[] arr = {18, 12, 7, 3, 14, 28};
-        System.out.println(mini(arr));
+        System.out.println(findmax(arr));
     }
 
-    static int mini(int[] arr) {
-        int min = arr[0];
+    static int findmax(int[] arr) {
+        int max = arr[0];
         for (int i = 1; i < arr.length; i++) {
-            if (arr[i] < min) {
-                min = arr[i];
+            if (max < arr[i]) {
+                max = arr[i];
             }
         }
-        return min;
+        return max;
     }
 
-//    static int mini(int[] arr) {
-//        int ans = arr[0];
+//    static int findmax(int[] arr) {
+//        int max = arr[0];
 //        for (int i = 1; i < arr.length; i++) {
-//            if (arr[i] < ans) {
-//                ans = arr[i];
+//            if (max < arr[i]) {
+//                max = i;
 //            }
 //        }
-//        return ans;
+//        return max;
 //    }
 }
