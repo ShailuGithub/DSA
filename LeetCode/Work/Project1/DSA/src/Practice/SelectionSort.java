@@ -15,19 +15,45 @@ public class SelectionSort {
 
     public static void main(String[] args) {
         int[] arr = {4, 5, 1, 2, 3};
-        //sort(arr);
-        sortByMin(arr);
+        sort(arr);
+        //sortByMin(arr);
         System.out.println(Arrays.toString(arr));
     }
 
     static void sort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             int last = arr.length - i - 1;
-            int maxIndex = GetMaxIndex(arr, 0, last);
-            swap(arr, maxIndex, last);
+            int maxindex = GetMaxIndex(arr, 0, last);
+            swap(arr, maxindex, last);
         }
     }
 
+    static int GetMaxIndex(int[] arr, int start, int end) {
+        int max = start;
+        for (int i = start; i <= end; i++) {
+            if (arr[max] < arr[i]) {
+                max = i;
+            }
+        }
+        return max;
+    }
+
+//    static void sort(int[] arr) {
+//        for (int i = 0; i < arr.length; i++) {
+//            int last = arr.length - i - 1;
+//            int maxIndex = GetMaxIndex(arr, 0, last);
+//            swap(arr, maxIndex, last);
+//        }
+//    }
+//    private static int GetMaxIndex(int[] arr, int start, int end) {
+//        int max = start;
+//        for (int j = start; j <= end; j++) {
+//            if (arr[max] < arr[j]) {
+//                max = j;
+//            }
+//        }
+//        return max;
+//    }
     static void sortByMin(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             int last = arr.length - 1;
@@ -44,16 +70,6 @@ public class SelectionSort {
             }
         }
         return min;
-    }
-
-    private static int GetMaxIndex(int[] arr, int start, int end) {
-        int max = start;
-        for (int j = start; j <= end; j++) {
-            if (arr[max] < arr[j]) {
-                max = j;
-            }
-        }
-        return max;
     }
 
     static void swap(int[] arr, int first, int second) {

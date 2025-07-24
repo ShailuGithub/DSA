@@ -15,16 +15,28 @@ public class FindMin {
         int[] arr = {18, 12, 7, 3, 14, 28};
         System.out.println(mini(arr));
     }
-
-    static int mini(int[] arr) {
-        int min = arr[0];
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] < min) {
-                min = arr[i];
+    
+    static int mini(int[] arr)
+    {
+        int min=arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if(min>arr[i])
+            {
+                min=arr[i];
             }
         }
         return min;
     }
+
+//    static int mini(int[] arr) {
+//        int min = arr[0];
+//        for (int i = 1; i < arr.length; i++) {
+//            if (arr[i] < min) {
+//                min = arr[i];
+//            }
+//        }
+//        return min;
+//    }
 
 //    static int mini(int[] arr) {
 //        int ans = arr[0];

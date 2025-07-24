@@ -22,15 +22,26 @@ public class CyclicSort {
     static void sort(int[] arr) {
         int i = 0;
         while (i < arr.length) {
-            int currectindexvalue = arr[i] - 1;
-            if (arr[i] != arr[currectindexvalue]) {
-                swap(arr, i, currectindexvalue);
+            int currentindex = arr[i]-1;
+            if (arr[i] < arr[currentindex]) {
+                swap(arr, i, currentindex);
             } else {
                 i++;
             }
         }
     }
 
+//    static void sort(int[] arr) {
+//        int i = 0;
+//        while (i < arr.length) {
+//            int currectindexvalue = arr[i] - 1;
+//            if (arr[i] != arr[currectindexvalue]) {
+//                swap(arr, i, currectindexvalue);
+//            } else {
+//                i++;
+//            }
+//        }
+//    }
 //    static void sort(int[] arr) {
 //        int i = 0;
 //        while (i < arr.length) {
