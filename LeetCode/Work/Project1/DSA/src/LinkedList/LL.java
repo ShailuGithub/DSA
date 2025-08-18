@@ -148,7 +148,81 @@ public class LL {
             size++;
             return temp;
         }
-        node.next = insertRec(val, index-1, node.next);
+        node.next = insertRec(val, index - 1, node.next);
         return node;
+    }
+
+    //Questions 83
+    public void duplicates() {
+        Node node = head;
+
+        while (node.next != null) {
+            if (node.value == node.next.value) {
+                node.next = node.next.next;
+                size--;
+            } else {
+                node = node.next;
+            }
+        }
+
+        tail = node;
+        tail.next = null;
+    }
+
+    //merge 21
+    public static LL merge(LL first, LL second) {
+        Node f = first.head;
+        Node s = second.head;
+
+        LL ans = new LL();
+        while (f != null && s != null) {
+            if (f.value < s.value) {
+                ans.InsertLast(f.value);
+                f = f.next;
+            } else {
+                ans.InsertLast(s.value);
+                s = s.next;
+            }
+        }
+
+        while (f != null) {
+            ans.InsertLast(f.value);
+            f = f.next;
+        }
+        while (s != null) {
+            ans.InsertLast(s.value);
+            s = s.next;
+        }
+        return ans;
+    }
+    
+    
+
+    public static void main(String[] args) {
+//        LL list = new LL();
+//        list.InsertLast(1);
+//        list.InsertLast(1);
+//        list.InsertLast(2);
+//        list.InsertLast(3);
+//        list.InsertLast(3);
+//        list.InsertLast(3);
+//        list.display();
+//        list.duplicates();
+//        list.display();
+
+        LL first = new LL();
+        LL second = new LL();
+
+        first.InsertLast(1);
+        first.InsertLast(3);
+        first.InsertLast(5);
+
+        second.InsertLast(1);
+        second.InsertLast(2);
+        second.InsertLast(9);
+        second.InsertLast(14);
+
+        LL ans = LL.merge(first, second);
+        ans.display();
     }
 }
